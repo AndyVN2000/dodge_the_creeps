@@ -69,3 +69,6 @@ public partial class Player : Area2D
 		}
 	}
 }
+
+[Signal]
+public delegate void HitEventHandler();
