@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cs00dtwddfswy" path="res://Player.tscn" id="1_lbshv"]
 [ext_resource type="Script" path="res://Main.cs" id="1_tpl3j"]
 [ext_resource type="PackedScene" uid="uid://ctr0jsntb3qt1" path="res://Mob.tscn" id="2_eyjp1"]
-[ext_resource type="PackedScene" uid="uid://cxlkgdbmoxawh" path="res://HUD.tscn" id="4_huk8k"]
+[ext_resource type="PackedScene" uid="uid://c4x3keoruagwk" path="res://HUD.tscn" id="4_huk8k"]
 
 [sub_resource type="Curve2D" id="Curve2D_i0wwr"]
 _data = {
@@ -40,3 +40,4 @@ curve = SubResource("Curve2D_i0wwr")
 [connection signal="timeout" from="MobTimer" to="." method="OnMobTimerTimeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="OnScoreTimerTimeout"]
 [connection signal="timeout" from="StartTimer" to="." method="OnStartTimerTimeout"]
+[connection signal="StartGame" from="HUD" to="." method="NewGame"]

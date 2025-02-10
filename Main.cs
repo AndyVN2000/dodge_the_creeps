@@ -16,6 +16,7 @@ public partial class Main : Node
 	{
 		GetNode<Timer>("MobTimer").Stop();
 		GetNode<Timer>("ScoreTimer").Stop();
+		GetNode<Hud>("HUD").ShowGameOver();
 	}
 
 	public void NewGame()
@@ -27,12 +28,17 @@ public partial class Main : Node
 		player.Start(startPosition.Position);
 
 		GetNode<Timer>("StartTimer").Start();
+		
+		var hud = GetNode<Hud>("HUD");
+		hud.UpdateScore(_score);
+		hud.ShowMessage("Get Ready!");
 	}
 	
 	// We also specified this function name in PascalCase in the editor's connection window.
 	private void OnScoreTimerTimeout()
 	{
 		_score++;
+		GetNode<Hud>("HUD").UpdateScore(_score);
 	}
 
 	// We also specified this function name in PascalCase in the editor's connection window.
