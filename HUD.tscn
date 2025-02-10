@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxlkgdbmoxawh"]
+[gd_scene load_steps=3 format=3 uid="uid://cxlkgdbmoxawh"]
 
 [ext_resource type="FontFile" uid="uid://xpdn5quqhdsh" path="res://fonts/Xolonium-Regular.ttf" id="1_c8rcn"]
+[ext_resource type="Script" path="res://Hud.cs" id="1_p4i77"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_p4i77")
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchors_preset = 5
@@ -53,3 +55,8 @@ theme_override_font_sizes/font_size = 64
 text = "Start"
 
 [node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="StartButton" to="." method="OnStartButtonPressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="OnMessageTimerTimeout"]
