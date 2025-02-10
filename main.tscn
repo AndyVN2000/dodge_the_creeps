@@ -5,3 +5,9 @@
 [node name="Main" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_lbshv")]
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
