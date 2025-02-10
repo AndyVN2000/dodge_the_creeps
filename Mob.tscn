@@ -58,10 +58,11 @@ metadata/_edit_group_ = true
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_5042e")
 animation = &"walk"
-frame_progress = 0.127275
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xt0dd")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="OnVisibleOnScreenNotifier2DScreenExited"]
