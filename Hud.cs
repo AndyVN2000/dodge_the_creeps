@@ -1,9 +1,8 @@
 using Godot;
 
-public partial class HUD : CanvasLayer
+public partial class Hud : CanvasLayer
 {
-	// Don't forget to rebuild the project so the editor knows about the new signal.
-
+	
 	[Signal]
 	public delegate void StartGameEventHandler();
 	
@@ -36,14 +35,12 @@ public partial class HUD : CanvasLayer
 		GetNode<Label>("ScoreLabel").Text = score.ToString();
 	}
 	
-	// We also specified this function name in PascalCase in the editor's connection window.
 	private void OnStartButtonPressed()
 	{
 		GetNode<Button>("StartButton").Hide();
 		EmitSignal(SignalName.StartGame);
 	}
-
-	// We also specified this function name in PascalCase in the editor's connection window.
+	
 	private void OnMessageTimerTimeout()
 	{
 		GetNode<Label>("Message").Hide();
