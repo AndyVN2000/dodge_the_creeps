@@ -9,6 +9,9 @@ public partial class Main : Node
 
 	private int _score;
 	
+	public override void _Ready()
+	{}
+	
 	public void GameOver()
 	{
 		GetNode<Timer>("MobTimer").Stop();
