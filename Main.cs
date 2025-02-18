@@ -17,6 +17,8 @@ public partial class Main : Node
 		GetNode<Timer>("MobTimer").Stop();
 		GetNode<Timer>("ScoreTimer").Stop();
 		GetNode<Hud>("HUD").ShowGameOver();
+		GetNode<AudioStreamPlayer>("Music").Stop();
+		GetNode<AudioStreamPlayer>("DeathSound").Play();
 	}
 
 	public void NewGame()
@@ -35,6 +37,9 @@ public partial class Main : Node
 		
 		// Clear the mobs from previous game
 		GetTree().CallGroup("mobs", Node.MethodName.QueueFree);
+		
+		// Play music
+		GetNode<AudioStreamPlayer>("Music").Play();
 	}
 	
 	// We also specified this function name in PascalCase in the editor's connection window.
